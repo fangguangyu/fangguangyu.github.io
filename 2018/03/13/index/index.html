@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  
+  
+  <title>  一个程序员的自我修行 </title>
+
+ 
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+
+
+  <link rel="stylesheet" href="/style.min.css"> 
+</head>  
+  <body> 
+    <header class="header">
+	
+  <nav class="header-nav">       
+	
+  	<span class="iconfont icon-menu mobile-toggle"></span>  
+
+    <a class="header-logo" href="/"><span>Nayo</a>  
+
+    <div class="header-menu">          
+              
+            
+
+              <a class="header-menu-link" id="header-menu-home" href="/">Home</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-archives" href="/archives">Archives</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-categories" href="/categories">Categories</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-tags" href="/tags">Tags</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-about" href="/about">About</a>     
+
+            
+            
+            
+
+              <a class="iconfont icon-menu-search header-menu-link" id="header-menu-search"></a>
+
+            
+                
+    </div>  
+    
+  </nav>
+</header>
+
+    <div class="container">         
+      
+        
+
+          <section id="main">  
+
+        
+
+        <article class="post">
+
+	  
+	<div class="post-header slideDownMin center">
+
+	<span class="post-title">	
+		Untitled
+	</span>
+
+	
+	<div class="post-info">
+
+		<time class="post-time"><span class="iconfont icon-date"></span>
+		2018/03/13 	
+		</time>
+		
+					
+
+			
+
+
+		
+
+		
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		1536
+		</span>
+
+				
+	
+	</div> 
+
+</div> 
+
+
+	  <div class="post-content slideDownMin">
+
+		
+
+	  	<h1 id="VueJS"><a href="#VueJS" class="headerlink" title="VueJS"></a>VueJS</h1><p>Vue是一套用于构建用户界面的渐进式框架。<br>与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。<br>Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，<br>当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<h2 id="如何生成Vue实例"><a href="#如何生成Vue实例" class="headerlink" title="如何生成Vue实例 "></a>如何生成Vue实例 </h2><blockquote>
+<p>在这之前要闲安装vue,vue-cli,webpack,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">具体命令如下：</span><br><span class="line">	npm install vue</span><br><span class="line">	npm install --global vue-cli  // 全局安装 vue-cli</span><br><span class="line">	npm install -g webpack</span><br><span class="line">	vue init webpack my-project //创建一个基于 webpack 模板的新项目</span><br><span class="line">	cd my-project</span><br><span class="line">	npm install   //安装依赖</span><br><span class="line">	npm run dev</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="Vue实例的生命周期"><a href="#Vue实例的生命周期" class="headerlink" title="Vue实例的生命周期"></a>Vue实例的生命周期</h2><p>Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、卸载等一系列过程，我们称这是Vue的生命周期。通俗说就是Vue实例从创建到销毁的过程，就是生命周期。</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/fly_dragon/276813/o_lifecycle-%E6%A0%87%E6%B3%A8%E7%89%88%E6%9C%AC.png =500x800" alt=""></p>
+<p>Vue的生命周期可分为8个阶段：</p>
+<blockquote>
+<p>beforeCreate（创建前）,</p>
+<p>created（创建后）,</p>
+<p>beforeMount(载入前),</p>
+<p>mounted（载入后）,</p>
+<p>beforeUpdate（更新前）,</p>
+<p>updated（更新后）,</p>
+<p>beforeDestroy（销毁前）,</p>
+<p>destroyed（销毁后）</p>
+</blockquote>
+<p>###实例演示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=app&gt;&#123;&#123;a&#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">var myVue = new Vue(&#123;          </span><br><span class="line"></span><br><span class="line">el: &quot;#app&quot;,          </span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line"></span><br><span class="line">a: &quot;Vue.js&quot;        </span><br><span class="line"></span><br><span class="line">&#125;,         </span><br><span class="line"></span><br><span class="line"> beforeCreate: function() &#123; </span><br><span class="line"></span><br><span class="line">         </span><br><span class="line">console.log(&quot;创建前&quot;)  //创建之前数据都还没有拿到。           </span><br><span class="line"></span><br><span class="line">console.log(this.a)            </span><br><span class="line"></span><br><span class="line">console.log(this.$el)          </span><br><span class="line"></span><br><span class="line">&#125;,         </span><br><span class="line"></span><br><span class="line">created: function() &#123;</span><br><span class="line"></span><br><span class="line">console.log(&quot;创建之后&quot;);         //创建之后拿到data函数里面的数据   </span><br><span class="line"></span><br><span class="line">console.log(this.a)            </span><br><span class="line"></span><br><span class="line">console.log(this.$el)          </span><br><span class="line"></span><br><span class="line">&#125;,         </span><br><span class="line"></span><br><span class="line"> beforeMount: function() &#123;            </span><br><span class="line"></span><br><span class="line">console.log(&quot;mount之前&quot;)            //载入view模板还未把数据添加到模板当中。</span><br><span class="line"></span><br><span class="line">console.log(this.a)            </span><br><span class="line"></span><br><span class="line">console.log(this.$el)          </span><br><span class="line"></span><br><span class="line">&#125;,          </span><br><span class="line"></span><br><span class="line">mounted: function() &#123;            </span><br><span class="line"></span><br><span class="line">console.log(&quot;mount之后&quot;)            //view模板以及数据全部都载入从而挂载到浏览器上显示。</span><br><span class="line"></span><br><span class="line">console.log(this.a)            </span><br><span class="line"></span><br><span class="line">console.log(this.$el)          </span><br><span class="line"></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>运行之后查看控制台：<br><br><br><img src="http://img.blog.csdn.net/20170303175839955?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjQwNzM4ODU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p><br><br>在methods里面添加一个change方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=app&gt;&#123;&#123;a&#125;&#125;</span><br><span class="line">	&lt;button v-on:click=&quot;change&quot;&gt;change&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://img.blog.csdn.net/20170303180404473?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjQwNzM4ODU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+  	
+
+	  </div>     
+	  
+
+	<div class="post-footer">    
+
+  
+
+
+
+
+<span class="donate-btn iconfont icon-donate "></span>
+
+
+<div id="donate-box" class="sildeUpMin">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="donate-img no-gallery" src="/images/donate1.png"  alt="Lost">	
+		<img id="donate-qr-alipay" class="donate-img no-gallery" src="/images/donate2.png"  alt="Lost">	
+	</div>
+
+	<span class="donate-word">世界美好 你也是</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
+	</div>
+
+</div>
+
+ 
+  
+	
+<script id="-mob-share" 
+src="http://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+	
+	<span class="share-btn iconfont icon-share">
+	</span>
+
+
+	<div class="-mob-share sildeUpMin">
+		                  
+            <span class="iconfont  icon-share-qq -mob-share-qq" title="qq"></span>
+     	                  
+            <span class="iconfont  icon-share-weixin -mob-share-weixin" title="weixin"></span>
+     	                  
+            <span class="iconfont  icon-share-weibo -mob-share-weibo" title="weibo"></span>
+     	                  
+            <span class="iconfont  icon-share-douban -mob-share-douban" title="douban"></span>
+     	                  
+            <span class="iconfont  icon-share-facebook -mob-share-facebook" title="facebook"></span>
+     	                  
+            <span class="iconfont  icon-share-twitter -mob-share-twitter" title="twitter"></span>
+     	                  
+            <span class="iconfont  icon-share-tumblr -mob-share-tumblr" title="tumblr"></span>
+     	                  
+            <span class="iconfont  icon-share-google -mob-share-google" title="google"></span>
+     	   
+	</div>
+	
+
+
+
+   <nav class="post-nav">
+
+      
+       
+    
+      
+
+         
+
+          <a href="/2018/03/03/myfirstWork/">         
+
+           <span title="myfirstWork">Next </span>  
+
+          </a>
+
+      
+
+  </nav>  
+</div> 
+	
+
+
+    <div id="comment">   
+    </div>
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+    <script src='//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js'></script>
+
+    <script>
+        new Valine({
+        el: '#comment',
+        notify:false, 
+        verify:false, 
+        app_id: 'cFM0eCo0CQ9xmBXmHi1eltol-gzGzoHsz',
+        app_key: 'oh9tizsnvV2vNvWgqEvoNtQO',  
+        path:window.location.pathname, 
+        avatar:'mm' ,
+        guest_info:['nick','mail']
+        });
+    </script>
+	
+
+</article>
+
+
+
+<div id="toc" >		
+
+	<div class="toc-container">	
+
+	<span id="toc-contents" class="toc-contents iconfont icon-open"> 
+		<span>Contents</span>
+	</span>
+
+	<ul class="toc-list"></ul>
+
+	</div>
+
+</div>
+
+        </section> 
+
+    </div>        
+
+    
+    <div class="mask"></div>
+    <div id="backTop" class="iconfont icon-backtotop sildeUpMin"></div> 
+
+    
+
+        
+        <div class="search-container sildeUpMin">
+            <input type="text" placeholder="Typing Something here." id="search-input" class="search-input">  
+              <span class="search-cancel iconfont icon-cancel"></span>
+              <div id="search-result" class="search-result"></div>
+        </div>
+ 
+
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon no-gallery" src= /images/favicon.png >   
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">Home
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">Archives
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/categories">Categories
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">Tags
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">About
+            </a>
+            
+         
+                          
+
+            <a class="mobile-menu-link mobile-menu-search" href="#">Search </a>                 
+            
+         
+      
+</div>     
+
+
+    
+
+<footer id="footer">
+	   
+   	 
+
+	  	
+   	
+      	 
+	 <div>
+	 	&copy;
+		2018
+		sam	 
+
+	 </div>
+
+
+   
+   	 <div>
+	
+	 <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+	 Theme
+
+	 <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a> 
+
+	 </div>	
+
+
+	
+	
+</footer>    
+    
+
+
+
+
+
+
+<!-- 
+ -->  
+    
+    
+    <script src="/main.bundle.js"></script>        
+  </body>        
+</html>
